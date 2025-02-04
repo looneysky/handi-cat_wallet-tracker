@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Выполняем установку зависимостей с помощью pnpm (с флагом --verbose для диагностики)
-RUN pnpm install --verbose
+RUN pnpm install
 
 # Копируем все файлы проекта
 COPY . .
