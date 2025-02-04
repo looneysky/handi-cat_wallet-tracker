@@ -27,9 +27,10 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # Устанавливаем зависимости
+           # Устанавливаем зависимости
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm install --verbose
 
       # Строим образ Docker
       - name: Build Docker image
