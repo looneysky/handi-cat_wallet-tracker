@@ -7,15 +7,16 @@ RUN npm install -g pnpm
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем только package.json и pnpm-lock.yaml, чтобы сначала установить зависимости
+# Копируем package.json, pnpm-lock.yaml и папку prisma перед установкой зависимостей
 COPY package.json pnpm-lock.yaml ./
+COPY prisma ./prisma
 
 RUN pnpm -v
 
-# Выполняем установку зависимостей с помощью pnpm (с флагом --verbose для диагностики)
+# Выполняем установку зависимостей
 RUN pnpm install
 
-# Копируем все файлы проекта
+# Копируем оставшиеся файлы проекта
 COPY . .
 
 # Открываем порт 3001
