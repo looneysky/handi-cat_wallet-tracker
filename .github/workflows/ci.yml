@@ -1,0 +1,46 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Проверяем репозиторий
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Устанавливаем Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.13.0'
+
+      # Устанавливаем pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # Устанавливаем зависимости
+      - name: Install dependencies
+        run: pnpm install
+
+      # Запускаем тесты
+      - name: Run tests
+        run: pnpm test
+
+      # Строим образ Docker
+      - name: Build Docker image
+        run: |
+          docker build -t my-app .
+
+      # Отправляем запрос на деплой
+      - name: Trigger deploy API
+        run: |
+          curl -X POST http://193.109.78.66:3000/api/deploy/9783ac82dd38a88d4ded57934ba891547bef2b69cc51ed26
