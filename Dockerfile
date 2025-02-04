@@ -7,9 +7,6 @@ RUN npm install -g pnpm
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем только package.json и pnpm-lock.yaml, чтобы сначала установить зависимости
-COPY package.json pnpm-lock.yaml ./
-
 # Выполняем установку зависимостей с помощью pnpm (с флагом --verbose для диагностики)
 RUN pnpm install
 
