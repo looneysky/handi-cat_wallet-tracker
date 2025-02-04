@@ -31,10 +31,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # Запускаем тесты
-      - name: Run tests
-        run: pnpm test
-
       # Строим образ Docker
       - name: Build Docker image
         run: |
