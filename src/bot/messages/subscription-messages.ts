@@ -38,7 +38,7 @@ ${subscriptionPlan !== 'FREE' ? `<b>Your subscription will renew <u>${formattedD
 <b>WHALE</b>: ${MAX_WHALE_WALLETS} wallets - ${WHALE_PLAN_FEE / 1e9} <b>SOL</b> / month
 
 <b>How to upgrade your plan?</b>
-1. Transfer the required <b>SOL</b> to your <b>Handi Cat</b> wallet: <code>${user?.personalWalletPubKey}</code>
+1. Transfer the required <b>SOL</b> to your <b>Bot</b> wallet: <code>${user?.personalWalletPubKey}</code>
 2. Now you can select one of the plans below!
 `
 
@@ -46,7 +46,7 @@ ${subscriptionPlan !== 'FREE' ? `<b>Your subscription will renew <u>${formattedD
   }
 
   static groupChatNotPro = `
-🚫 You can only add Handi Cat to a group if you have a <b>PRO</b> or a <b>WHALE</b> subscription.
+🚫 You can only add Bot to a group if you have a <b>PRO</b> or a <b>WHALE</b> subscription.
 
 You can upgrade your plan directly from our official bot:
 
@@ -54,7 +54,7 @@ You can upgrade your plan directly from our official bot:
 `
 
   static userUpgradeGroups = `
-To add <b>Handi Cat</b> to Groups, you need a <b>PRO</b> or <b>WHALE</b> subscription
+To add <b>Bot</b> to Groups, you need a <b>PRO</b> or <b>WHALE</b> subscription
 
 <b>Click the button below to upgrade your subscription and access to our exclusive features!</b>
 `

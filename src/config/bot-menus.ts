@@ -111,7 +111,7 @@ export const SUGGEST_UPGRADE_SUBMENU: InlineKeyboardMarkup = {
 
 export const INSUFFICIENT_BALANCE_SUB_MENU: InlineKeyboardMarkup = {
   inline_keyboard: [
-    [{ text: '😺 Your Handi Cat Wallet', callback_data: 'my_wallet' }],
+    [{ text: '😺 Your Bot Wallet', callback_data: 'my_wallet' }],
     [{ text: '🔙 Back', callback_data: 'back_to_main_menu' }],
   ],
 }
@@ -121,7 +121,7 @@ export const USER_SETTINGS_MENU = (botStatus: HandiCatStatus): InlineKeyboardMar
     inline_keyboard: [
       [
         {
-          text: `${botStatus === 'ACTIVE' ? '⏸️ Pause Handi Cat' : '▶️ Resume Handi Cat'}`,
+          text: `${botStatus === 'ACTIVE' ? '⏸️ Pause Bot' : '▶️ Resume Bot'}`,
           callback_data: 'pause-resume-bot',
         },
       ],
