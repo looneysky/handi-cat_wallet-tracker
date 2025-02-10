@@ -15,7 +15,7 @@ const QUICKNODE_NETWORK = process.env.QUICKNODE_API_KEY ?? ''
 export class RpcConnectionManager {
   static connections = [new Connection(SOLANA_NETWORK, 'confirmed'), new Connection(SOLANA_NETWORK, 'confirmed')]
 
-  static logConnection = new Connection(SOLANA_NETWORK, 'processed')
+  static logConnection = new Connection(HELIUS_NETWORK, 'processed')
 
   static getRandomConnection(): Connection {
     const randomIndex = Math.floor(Math.random() * RpcConnectionManager.connections.length)
