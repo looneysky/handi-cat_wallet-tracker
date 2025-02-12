@@ -30,17 +30,16 @@ For a <b>One-Time</b> payment of only <b>0.1 SOL</b>, track up to <b>**50 wallet
 Don’t miss out on this exclusive deal to supercharge your wallet tracking without any monthly subscriptions!
 `
     const messageText = `
-🐱 Bot | Wallet Tracker
+Bot | Wallet Tracker
 
 Get real time activity notifications for any wallet you add!
 
-You are currently tracking <b>${user?._count.userWallets || 0} / ${planWallets[plan]} wallets</b> ✨
+You are currently tracking <b>${user?._count.userWallets || 0} / ${planWallets[plan]} wallets</b> wallets 
 
-🆙 Click the <b>Upgrade</b> button to unlock more wallet slots and retain your tracked wallets! 
+Click the <b>Upgrade</b> button to unlock more wallet slots and retain your tracked wallets! 
 
-⚠️ <b>Note for Free Users:</b>  
-To ensure smooth performance for everyone, free wallets may be cleaned up periodically. Consider upgrading to retain all your tracked wallets! 🚀
-`
+<b>Note for Free Users:</b>  
+To ensure smooth performance for everyone, free wallets may be cleaned up periodically. Consider upgrading to retain all your tracked wallets!`
 
     return messageText
   }
