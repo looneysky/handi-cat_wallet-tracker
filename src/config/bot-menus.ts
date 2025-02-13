@@ -7,19 +7,19 @@ export const START_MENU: InlineKeyboardMarkup = {
   inline_keyboard: [
     // [{ text: '🌟 Buy Limited-Time Offer', callback_data: 'buy_promotion' }],
     [
-      { text: '🔮 Add', callback_data: 'add' },
-      { text: '👀 Manage', callback_data: 'manage' },
+      { text: 'Add', callback_data: 'add' },
+      { text: 'Manage', callback_data: 'manage' },
     ],
     [
-      { text: '👛 My Wallet', callback_data: 'my_wallet' },
-      { text: '❤️ Donate', callback_data: 'donate' },
-      { text: '⚙️ Settings', callback_data: 'settings' },
+      { text: 'My Wallet', callback_data: 'my_wallet' },
+      { text: 'Donate', callback_data: 'donate' },
+      { text: 'Settings', callback_data: 'settings' },
     ],
     [
-      { text: '🆕 Groups', callback_data: 'groups' },
-      { text: '🔎 Help', callback_data: 'help' },
+      { text: 'Groups', callback_data: 'groups' },
+      { text: 'Help', callback_data: 'help' },
     ],
-    [{ text: '👑 Upgrade', callback_data: 'upgrade' }],
+    [{ text: 'Upgrade', callback_data: 'upgrade' }],
   ],
 }
 
@@ -58,7 +58,7 @@ export const createTxSubMenu = (tokenSymbol: string, tokenMint: string) => {
 export const MANAGE_SUB_MENU: InlineKeyboardMarkup = {
   inline_keyboard: [
     [
-      { text: '🔮 Add', callback_data: 'add' },
+      { text: 'Add', callback_data: 'add' },
       { text: '🗑️ Delete', callback_data: 'delete' },
     ],
 
@@ -104,7 +104,7 @@ export const DONATE_MENU: InlineKeyboardMarkup = {
 
 export const SUGGEST_UPGRADE_SUBMENU: InlineKeyboardMarkup = {
   inline_keyboard: [
-    [{ text: '👑 Upgrade', callback_data: 'upgrade' }],
+    [{ text: 'Upgrade', callback_data: 'upgrade' }],
     [{ text: '🔙 Back', callback_data: 'back_to_main_menu' }],
   ],
 }

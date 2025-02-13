@@ -34,11 +34,11 @@ Bot | Wallet Tracker
 
 Get real time activity notifications for any wallet you add!
 
-You are currently tracking <b>${user?._count.userWallets || 0} / ${planWallets[plan]} wallets</b> wallets 
+You are currently tracking ${user?._count.userWallets || 0} / ${planWallets[plan]} wallets wallets 
 
-Click the <b>Upgrade</b> button to unlock more wallet slots and retain your tracked wallets! 
+Click the Upgrade button to unlock more wallet slots and retain your tracked wallets! 
 
-<b>Note for Free Users:</b>  
+Note for Free Users: 
 To ensure smooth performance for everyone, free wallets may be cleaned up periodically. Consider upgrading to retain all your tracked wallets!`
 
     return messageText
