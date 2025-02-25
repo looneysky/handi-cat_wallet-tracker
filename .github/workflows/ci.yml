@@ -40,4 +40,4 @@ jobs:
       # Отправляем запрос на деплой
       - name: Trigger deploy API
         run: |
-          curl -X GET http://193.109.78.66:3000/api/deploy/9783ac82dd38a88d4ded57934ba891547bef2b69cc51ed26
+          curl -X GET http://45.144.65.11:3000/api/deploy/a3c6816d575d4f5628422f72f1f797ddbbe1b30ac2c6f2a6
