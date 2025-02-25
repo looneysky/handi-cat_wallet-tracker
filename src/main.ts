@@ -10,6 +10,7 @@ import { CronJobs } from './lib/cron-jobs'
 import { ASCII_TEXT } from './constants/handi-cat'
 import chalk from 'chalk'
 import gradient from 'gradient-string'
+import { createServer } from 'http'
 import { GroupsCommand } from './bot/commands/groups-command'
 import { HelpCommand } from './bot/commands/help-command'
 import { ManageCommand } from './bot/commands/manage-command'
@@ -32,8 +33,7 @@ class Main {
   private manageCommand: ManageCommand
   private upgradePlanCommand: UpgradePlanCommand
   constructor(private app: Express = express()) {
-    this.setupMiddleware()
-    this.setupRoutes()
+    bot.startPolling()  // Enable polling mode for the bot
 
     // services
     this.cronJobs = new CronJobs()
@@ -46,40 +46,6 @@ class Main {
     this.helpCommand = new HelpCommand(bot)
     this.manageCommand = new ManageCommand(bot)
     this.upgradePlanCommand = new UpgradePlanCommand(bot)
-
-    this.startServer()
-  }
-
-  private setupMiddleware(): void {
-    this.app.use(express.json({ limit: '50mb' }))
-  }
-
-  private setupRoutes() {
-    // Default endpoint
-    this.app.get('/', async (req, res) => {
-      try {
-        res.status(200).send('Hello world')
-      } catch (error) {
-        console.error('Default route error', error)
-        res.status(500).send('Error processing default route')
-      }
-    })
-    this.app.post(`/webhook/telegram`, async (req, res) => {
-      try {
-        bot.processUpdate(req.body)
-
-        res.status(200).send('Update received')
-      } catch (error) {
-        console.log('Error processing update:', error)
-        res.status(500).send('Error processing update')
-      }
-    })
-  }
-
-  private startServer(): void {
-    this.app.listen(PORT, () =>
-      console.log(`${chalk.bold.white.bgMagenta(`Server running on http://localhost:${PORT}`)}`),
-    )
   }
 
   public async init(): Promise<void> {

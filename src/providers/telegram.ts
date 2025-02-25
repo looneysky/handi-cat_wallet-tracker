@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const BOT_TOKEN = process.env.BOT_TOKEN
+const BOT_TOKEN = process.argv[2];  // Токен передается как аргумент командной строки
 const TEST_BOT_TOKEN = process.env.TEST_BOT_TOKEN
 const APP_URL = process.env.APP_URL
 
